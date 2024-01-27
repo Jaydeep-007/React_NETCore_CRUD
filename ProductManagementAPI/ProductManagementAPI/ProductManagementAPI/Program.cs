@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using ProductManagementAPI.Data;
 using ProductManagementAPI.Repositories;
 
@@ -11,6 +9,7 @@ builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddCors(options => {
     options.AddPolicy("CORSPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

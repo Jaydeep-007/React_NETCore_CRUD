@@ -28,12 +28,16 @@ const ProductList = () => {
         }
     };
 
+    const handleEdit = () => {
+        fetchProducts(); // Refresh product list after editing
+    };
+
     return (
-        <div>
-            <h2>Product List</h2>
-            <ul>
+        <div className="container">
+            <h2 className="my-4">Product List</h2>
+            <ul className="list-group">
                 {products.map(product => (
-                    <ProductListItem key={product.id} product={product} onDelete={handleDelete} />
+                    <ProductListItem key={product.id} product={product} onDelete={() => handleDelete(product.id)} onEdit={handleEdit} />
                 ))}
             </ul>
         </div>

@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProductManagementAPI.Entities;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 
 namespace ProductManagementAPI.Data
 {
@@ -18,6 +16,7 @@ namespace ProductManagementAPI.Data
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
     }
 }
